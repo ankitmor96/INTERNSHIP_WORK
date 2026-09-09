@@ -1,0 +1,28 @@
+.footer {
+  min-height: 75px;
+
+  background: #eef3f8;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 8%;
+
+  color: #60758f;
+
+  font-size: 14px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-links span {
+  cursor: pointer;
+}
+
+.footer-links span:hover {
+  color: #075db3;
+}

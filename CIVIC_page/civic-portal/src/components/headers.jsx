@@ -6,8 +6,13 @@ const Header = () => {
     <header className="header">
       <div className="header-left">
 
-        <div className="emblem">🏛️</div>
+        <div className="emblem">
 
+        </div>
+        <img
+          src="/assets/government-emblem.png"
+          alt="Government of India Emblem"
+        />
         <div>
           <small>Government of India</small>
         </div>

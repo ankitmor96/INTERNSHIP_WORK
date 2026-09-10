@@ -3,7 +3,7 @@ import "./footer.css";
 const Footer = () => {
     return (
         <footer className="footer">
-            <p>© 2026 CIVILC Government Portal. All rights reserved.</p>
+            <p>© 2026 CIVIC Government Portal. All rights reserved.</p>
 
 
             <div className="footer-links">

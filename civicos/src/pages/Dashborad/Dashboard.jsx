@@ -164,8 +164,8 @@ const Dashboard = () => {
         <div className="header-brand">
           <img src="/assets/government-emblem.png" alt="Emblem of India" className="gov-emblem" />
           <div className="gov-title">
-            <strong>Government of Gujarat</strong>
-            <small>Digital Gujarat - Citizen Services</small>
+            {/* <strong>Government of Gujarat</strong> */}
+            <strong>Digital Gujarat - Citizen Services</strong>
           </div>
         </div>
 

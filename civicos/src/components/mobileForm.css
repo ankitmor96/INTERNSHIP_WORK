@@ -1,0 +1,226 @@
+.main-content {
+  width: 100%;
+  min-height: calc(100vh - 150px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+
+/* Mobile Icon */
+.mobile-icon {
+  width: 65px;
+  height: 65px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e8f2ff;
+
+  font-size: 30px;
+}
+
+
+/* Heading */
+.form-container h2 {
+  margin-bottom: 10px;
+
+  text-align: center;
+
+  font-size: 28px;
+  font-weight: 600;
+
+  color: #16365c;
+}
+
+
+/* Subtitle */
+.subtitle {
+  margin-bottom: 32px;
+
+  text-align: center;
+
+  color: #6b7f99;
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+
+/* Label */
+form label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  color: #263b53;
+}
+
+form label span {
+  color: #e53935;
+}
+
+
+/* Mobile Input Container */
+.mobile-input {
+  display: flex;
+
+  width: 100%;
+  height: 55px;
+
+  overflow: hidden;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  transition: 0.2s ease;
+}
+
+
+/* Input Focus */
+.mobile-input:focus-within {
+  border-color: #1261b0;
+
+  box-shadow: 0 0 0 3px rgba(18, 97, 176, 0.1);
+}
+
+
+/* Country Code */
+.country-code {
+  width: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: #f3f6fa;
+
+  color: #50657e;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  border-right: 1px solid #d9e0e8;
+}
+
+
+/* Mobile Input */
+.mobile-input input {
+  flex: 1;
+
+  width: 100%;
+
+  padding: 0 15px;
+
+  border: none;
+  outline: none;
+
+  font-size: 16px;
+
+  color: #263b53;
+
+  background: transparent;
+}
+
+
+/* Placeholder */
+.mobile-input input::placeholder {
+  color: #9aaabd;
+}
+
+
+/* Error Message */
+.error {
+  margin-top: 8px;
+
+  color: #dc3545;
+
+  font-size: 14px;
+}
+
+
+/* Continue Button */
+form button {
+  width: 100%;
+  height: 52px;
+
+  margin-top: 25px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #075db3;
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+/* Button Hover */
+form button:hover:not(:disabled) {
+  background: #064b90;
+}
+
+
+/* Disabled Button */
+form button:disabled {
+  background: #a8bfd8;
+
+  cursor: not-allowed;
+}
+
+
+/* Arrow */
+form button span {
+  margin-left: 8px;
+
+  font-size: 22px;
+
+  vertical-align: middle;
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 28px 22px;
+  }
+
+  .form-container h2 {
+    font-size: 23px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .mobile-input {
+    height: 52px;
+  }
+
+  form button {
+    height: 50px;
+  }
+}

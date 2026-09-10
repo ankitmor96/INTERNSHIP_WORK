@@ -1,0 +1,238 @@
+/* =================================
+   CIVIC GOVERNMENT - LOGIN PAGE
+================================= */
+
+.auth-page {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 50px 20px;
+
+  background: #f4f7fb;
+
+  box-sizing: border-box;
+}
+
+
+/* =================================
+   LOGIN CARD
+================================= */
+
+.auth-card {
+  width: 100%;
+  max-width: 500px;
+
+  padding: 40px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce5ef;
+  border-radius: 12px;
+
+  box-shadow: 0 8px 30px rgba(12, 61, 112, 0.10);
+
+  box-sizing: border-box;
+}
+
+
+/* =================================
+   LOGIN TITLE
+================================= */
+
+.auth-card h1 {
+  margin: 0 0 8px;
+
+  text-align: center;
+
+  color: #16365c;
+
+  font-size: 30px;
+  font-weight: 600;
+}
+
+
+/* =================================
+   SUBTITLE
+================================= */
+
+.auth-card .subtitle {
+  margin: 0 0 32px;
+
+  text-align: center;
+
+  color: #6b7f99;
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+
+/* =================================
+   INPUT GROUP
+================================= */
+
+.input-group {
+  margin-bottom: 22px;
+}
+
+
+/* =================================
+   LABEL
+================================= */
+
+.input-group label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #263b53;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+/* =================================
+   INPUT
+================================= */
+
+.input-group input {
+  width: 100%;
+  height: 52px;
+
+  padding: 0 15px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #263b53;
+
+  font-size: 16px;
+
+  box-sizing: border-box;
+
+  transition: 0.2s ease;
+}
+
+
+/* =================================
+   INPUT FOCUS
+================================= */
+
+.input-group input:focus {
+  border-color: #1261b0;
+
+  box-shadow: 0 0 0 3px rgba(18, 97, 176, 0.10);
+}
+
+
+/* =================================
+   PLACEHOLDER
+================================= */
+
+.input-group input::placeholder {
+  color: #9aaabd;
+}
+
+
+/* =================================
+   LOGIN BUTTON
+================================= */
+
+.auth-btn {
+  width: 100%;
+  height: 52px;
+
+  margin-top: 5px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #075db3;
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.auth-btn:hover {
+  background: #064b90;
+}
+
+
+/* =================================
+   BOTTOM TEXT
+================================= */
+
+.bottom-text {
+  margin-top: 25px;
+
+  text-align: center;
+
+  color: #6b7f99;
+
+  font-size: 15px;
+}
+
+
+.bottom-text span {
+  margin-left: 5px;
+
+  color: #075db3;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.bottom-text span:hover {
+  text-decoration: underline;
+
+  color: #064b90;
+}
+
+
+/* =================================
+   MOBILE RESPONSIVE
+================================= */
+
+@media (max-width: 600px) {
+
+  .auth-page {
+    padding: 30px 15px;
+  }
+
+  .auth-card {
+    padding: 30px 22px;
+  }
+
+  .auth-card h1 {
+    font-size: 25px;
+  }
+
+  .auth-card .subtitle {
+    font-size: 14px;
+  }
+
+  .input-group input {
+    height: 50px;
+  }
+
+  .auth-btn {
+    height: 50px;
+  }
+}

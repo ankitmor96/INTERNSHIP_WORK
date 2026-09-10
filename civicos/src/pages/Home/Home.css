@@ -1,0 +1,39 @@
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7ff;
+}
+
+.home-card {
+  text-align: center;
+  background: white;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.home-card h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.home-card p {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.home-card button {
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  background: #e74c3c;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.home-card button:hover {
+  background: #c0392b;
+}

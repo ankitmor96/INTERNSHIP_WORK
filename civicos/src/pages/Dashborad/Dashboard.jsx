@@ -2,7 +2,7 @@ import { useMemo, useState, useEffect, useRef } from "react";
 import {
   Menu, Search, Bell, CheckCircle2, Clock, XCircle, Layers, LayoutDashboard,
   ClipboardList, Users, BarChart3, Settings, LogOut, Plus, Pencil, Trash2,
-  ChevronLeft, ChevronRight, X, Calendar, Inbox, ChevronDown,
+  ChevronLeft, ChevronRight, X, Calendar, Inbox, ChevronDown, User,
 } from "lucide-react";
 import "./Dashboard.css";
 
@@ -48,6 +48,8 @@ const Dashboard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editRecord, setEditRecord] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [ntfOpen, setNtfOpen] = useState(false);
+  const [adminOpen, setAdminOpen] = useState(false);
   const [dayCount, setDayCount] = useState(0);
   const modalRef = useRef(null);
 
@@ -71,6 +73,8 @@ const Dashboard = () => {
       if (e.key === "Escape") {
         setIsModalOpen(false);
         setSidebarOpen(false);
+        setNtfOpen(false);
+        setAdminOpen(false);
       }
     };
     window.addEventListener("keydown", onKey);
@@ -171,21 +175,95 @@ const Dashboard = () => {
 
         <div className="header-search">
           <Search size={17} />
-          <input type="text" placeholder="Search Dashboard..." aria-label="Search" />
+
+          <input
+            type="text"
+            placeholder="Search Dashboard..."
+            aria-label="Search Dashboard"
+            value={searchTerm}
+            onChange={(e) => {
+              setSearchTerm(e.target.value);
+              setCurrentPage(1);
+            }}
+          />
         </div>
 
         <div className="header-right">
-          <button className="notification" aria-label="Notifications">
-            <Bell size={21} />
-            <span>3</span>
-          </button>
-          <div className="admin-profile">
-            <div className="profile-avatar">A</div>
-            <div className="profile-text">
-              <strong>Admin</strong>
-              <small>System Administrator</small>
+          <div className="ntf-wrap">
+            <button
+              className="notification"
+              aria-label="Notifications"
+              onClick={() => {
+                setNtfOpen((o) => !o);
+                setAdminOpen(false);
+              }}
+            >
+              <Bell size={21} />
+              <span>3</span>
+            </button>
+            {ntfOpen && (
+              <div className="dropdown-panel ntf-panel">
+                <h3>Notifications</h3>
+                <div className="ntf-item">
+                  <CheckCircle2 size={18} className="ntf-ic green" />
+                  <div>
+                    <p>Authorisation REV001 approved</p>
+                    <small>2 minutes ago</small>
+                  </div>
+                </div>
+                <div className="ntf-item">
+                  <Clock size={18} className="ntf-ic orange" />
+                  <div>
+                    <p>HEALTH002 is pending review</p>
+                    <small>1 hour ago</small>
+                  </div>
+                </div>
+                <div className="ntf-item">
+                  <XCircle size={18} className="ntf-ic red" />
+                  <div>
+                    <p>LAB009 was deactivated</p>
+                    <small>Yesterday</small>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="admin-wrap">
+            <div
+              className="admin-profile"
+              onClick={() => {
+                setAdminOpen((o) => !o);
+                setNtfOpen(false);
+              }}
+            >
+              <div className="profile-avatar">A</div>
+              <div className="profile-text">
+                <strong>Admin</strong>
+                <small>System Administrator</small>
+              </div>
+              <ChevronDown size={17} />
             </div>
-            <ChevronDown size={17} />
+            {adminOpen && (
+              <div className="dropdown-panel admin-panel">
+                <div className="panel-user">
+                  <div className="profile-avatar">A</div>
+                  <div>
+                    <strong>Admin</strong>
+                    <small>admin@civicos.gov.in</small>
+                  </div>
+                </div>
+                <button type="button">
+                  <span><User size={16} /></span> My Profile
+                </button>
+                <button type="button">
+                  <span><Settings size={16} /></span> Settings
+                </button>
+                <div className="panel-divider" />
+                <button type="button" className="panel-danger">
+                  <span><LogOut size={16} /></span> Logout
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </header>
@@ -197,7 +275,7 @@ const Dashboard = () => {
           <div className="brand">
             <img src="/assets/government-emblem.png" alt="Emblem" className="brand-symbol" />
             <h2>
-              CIVI<span>COS</span>
+              CIVICOS
             </h2>
           </div>
 
@@ -231,6 +309,15 @@ const Dashboard = () => {
         </aside>
 
         {sidebarOpen && <div className="sidebar-backdrop" onClick={() => setSidebarOpen(false)} />}
+        {(ntfOpen || adminOpen) && (
+          <div
+            className="dropdown-backdrop"
+            onMouseDown={() => {
+              setNtfOpen(false);
+              setAdminOpen(false);
+            }}
+          />
+        )}
 
         {/* Main */}
         <main className="main-content">

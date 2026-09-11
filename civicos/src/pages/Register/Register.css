@@ -1,238 +1,210 @@
 /* =================================
-   CIVIC GOVERNMENT - REGISTER PAGE
+   CUSTOM ALERT
 ================================= */
 
-.auth-page {
-  min-height: 100vh;
+.custom-alert-overlay {
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
   display: flex;
+
   justify-content: center;
   align-items: center;
 
-  padding: 50px 20px;
+  padding: 20px;
 
-  background: #f4f7fb;
+  background: rgba(22, 54, 92, 0.45);
 
-  box-sizing: border-box;
+  z-index: 9999;
+
 }
 
 
 /* =================================
-   REGISTER CARD
+   ALERT BOX
 ================================= */
 
-.auth-card {
-  width: 100%;
-  max-width: 560px;
+.custom-alert {
 
-  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+
+  padding: 30px;
+
+  text-align: center;
 
   background: #ffffff;
 
-  border: 1px solid #dce5ef;
   border-radius: 12px;
 
-  box-shadow: 0 8px 30px rgba(12, 61, 112, 0.10);
+  border: 1px solid #dce5ef;
+
+  box-shadow: 0 12px 35px rgba(12, 61, 112, 0.20);
 
   box-sizing: border-box;
+
 }
 
 
 /* =================================
-   REGISTER TITLE
+   ALERT ICON
 ================================= */
 
-.auth-card h1 {
-  margin: 0 0 8px;
+.alert-icon {
 
-  text-align: center;
+  width: 55px;
+  height: 55px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+}
+
+
+/* =================================
+   SUCCESS ALERT
+================================= */
+
+.custom-alert.success {
+
+  border-top: 4px solid #16805c;
+
+}
+
+.custom-alert.success .alert-icon {
+
+  background: #e7f6f0;
+
+  border: 2px solid #16805c;
+
+  color: #16805c;
+
+}
+
+
+/* =================================
+   ERROR ALERT
+================================= */
+
+.custom-alert.error {
+
+  border-top: 4px solid #c0392b;
+
+}
+
+.custom-alert.error .alert-icon {
+
+  background: #fdecea;
+
+  border: 2px solid #c0392b;
+
+  color: #c0392b;
+
+}
+
+
+/* =================================
+   ALERT TITLE
+================================= */
+
+.custom-alert h2 {
+
+  margin: 0 0 10px;
 
   color: #16365c;
 
-  font-size: 30px;
+  font-size: 22px;
+
   font-weight: 600;
+
 }
 
 
 /* =================================
-   SUBTITLE
+   ALERT MESSAGE
 ================================= */
 
-.auth-card .subtitle {
-  margin: 0 0 32px;
+.custom-alert p {
 
-  text-align: center;
+  margin: 0;
 
   color: #6b7f99;
 
-  font-size: 15px;
+  font-size: 14px;
+
   line-height: 1.5;
+
 }
 
 
 /* =================================
-   INPUT GROUP
+   ALERT BUTTON
 ================================= */
 
-.input-group {
-  margin-bottom: 20px;
-}
+.alert-btn {
 
-
-/* =================================
-   LABEL
-================================= */
-
-.input-group label {
-  display: block;
-
-  margin-bottom: 9px;
-
-  color: #263b53;
-
-  font-size: 15px;
-  font-weight: 600;
-}
-
-
-/* =================================
-   INPUT
-================================= */
-
-.input-group input {
   width: 100%;
-  height: 50px;
 
-  padding: 0 15px;
+  height: 45px;
 
-  border: 1px solid #cbd5e1;
-  border-radius: 7px;
-
-  outline: none;
-
-  background: #ffffff;
-
-  color: #263b53;
-
-  font-size: 16px;
-
-  box-sizing: border-box;
-
-  transition: 0.2s ease;
-}
-
-
-/* =================================
-   INPUT FOCUS
-================================= */
-
-.input-group input:focus {
-  border-color: #1261b0;
-
-  box-shadow: 0 0 0 3px rgba(18, 97, 176, 0.10);
-}
-
-
-/* =================================
-   PLACEHOLDER
-================================= */
-
-.input-group input::placeholder {
-  color: #9aaabd;
-}
-
-
-/* =================================
-   REGISTER BUTTON
-================================= */
-
-.auth-btn {
-  width: 100%;
-  height: 52px;
-
-  margin-top: 8px;
+  margin-top: 22px;
 
   border: none;
+
   border-radius: 7px;
 
   background: #075db3;
 
   color: #ffffff;
 
-  font-size: 17px;
+  font-size: 15px;
+
   font-weight: 600;
 
   cursor: pointer;
 
   transition: 0.2s ease;
+
 }
 
+.alert-btn:hover {
 
-.auth-btn:hover {
   background: #064b90;
+
 }
 
 
 /* =================================
-   BOTTOM TEXT
-================================= */
-
-.bottom-text {
-  margin-top: 25px;
-
-  text-align: center;
-
-  color: #6b7f99;
-
-  font-size: 15px;
-}
-
-
-.bottom-text span {
-  margin-left: 5px;
-
-  color: #075db3;
-
-  font-weight: 600;
-
-  cursor: pointer;
-}
-
-
-.bottom-text span:hover {
-  text-decoration: underline;
-
-  color: #064b90;
-}
-
-
-/* =================================
-   MOBILE RESPONSIVE
+   MOBILE
 ================================= */
 
 @media (max-width: 600px) {
 
-  .auth-page {
-    padding: 30px 15px;
+  .custom-alert {
+
+    padding: 25px 20px;
+
   }
 
-  .auth-card {
-    padding: 30px 22px;
+  .custom-alert h2 {
+
+    font-size: 20px;
+
   }
 
-  .auth-card h1 {
-    font-size: 25px;
-  }
-
-  .auth-card .subtitle {
-    font-size: 14px;
-  }
-
-  .input-group input {
-    height: 50px;
-  }
-
-  .auth-btn {
-    height: 50px;
-  }
 }

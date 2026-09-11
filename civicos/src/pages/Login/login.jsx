@@ -9,14 +9,26 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // Custom Alert
+  const [alert, setAlert] = useState({
+    show: false,
+    type: "",
+    message: ""
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const storedUser = JSON.parse(localStorage.getItem("user"));
 
     if (!storedUser) {
-      alert("Please Register First");
-      navigate("/register");
+
+      setAlert({
+        show: true,
+        type: "account",
+        message: "Please create an account before attempting to login."
+      });
+
       return;
     }
 
@@ -25,18 +37,45 @@ const Login = () => {
       password === storedUser.password
     ) {
 
-      alert("Login Successful!");
+      localStorage.setItem("isLoggedIn", "true");
 
-      localStorage.setItem("isLoggedIn","true");
-      
-      navigate("/home");
+      setAlert({
+        show: true,
+        type: "success",
+        message: "You have been securely authenticated."
+      });
 
     } else {
 
-      alert("Invalid Email or Password");
+      setAlert({
+        show: true,
+        type: "error",
+        message: "The email or password you entered is incorrect."
+      });
 
     }
   };
+
+
+  const closeAlert = () => {
+
+    const alertType = alert.type;
+
+    setAlert({
+      show: false,
+      type: "",
+      message: ""
+    });
+
+    if (alertType === "success") {
+      navigate("/home");
+    }
+
+    if (alertType === "account") {
+      navigate("/register");
+    }
+  };
+
 
   return (
     <div className="auth-page">
@@ -99,6 +138,63 @@ const Login = () => {
         </p>
 
       </div>
+
+
+      {/* =================================
+          SECURITY ALERT
+      ================================= */}
+
+      {alert.show && (
+        <div className="custom-alert-overlay">
+
+          <div className={`custom-alert ${alert.type}`}>
+
+            <div className="alert-icon">
+
+              {alert.type === "success" && "🔐"}
+
+              {alert.type === "error" && "🔒"}
+
+              {alert.type === "account" && "👤"}
+
+            </div>
+
+            <div className="security-line">
+              CIVIC GOVERNMENT PORTAL
+            </div>
+
+            <h2>
+
+              {alert.type === "success" &&
+                "Secure Login Successful"}
+
+              {alert.type === "error" &&
+                "Authentication Failed"}
+
+              {alert.type === "account" &&
+                "Account Not Found"}
+
+            </h2>
+
+            <p>
+              {alert.message}
+            </p>
+
+            <button
+              className="alert-btn"
+              onClick={closeAlert}
+            >
+              {alert.type === "account"
+                ? "Register Now"
+                : alert.type === "success"
+                  ? "Continue"
+                  : "Try Again"}
+            </button>
+
+          </div>
+
+        </div>
+      )}
 
     </div>
   );

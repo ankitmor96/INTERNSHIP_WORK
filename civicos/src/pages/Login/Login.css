@@ -236,3 +236,487 @@
     height: 50px;
   }
 }
+
+/* =================================
+   CUSTOM LOGIN ALERT
+================================= */
+
+.custom-alert-overlay {
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  background: rgba(22, 54, 92, 0.45);
+
+  z-index: 9999;
+
+}
+
+
+/* =================================
+   ALERT BOX
+================================= */
+
+.custom-alert {
+
+  width: 100%;
+
+  max-width: 400px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  border: 1px solid #dce5ef;
+
+  box-shadow: 0 12px 35px rgba(12, 61, 112, 0.20);
+
+  box-sizing: border-box;
+
+}
+
+
+/* =================================
+   ALERT ICON
+================================= */
+
+.alert-icon {
+
+  width: 55px;
+  height: 55px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+}
+
+
+/* =================================
+   SUCCESS
+================================= */
+
+.custom-alert.success {
+
+  border-top: 4px solid #16805c;
+
+}
+
+.custom-alert.success .alert-icon {
+
+  background: #e7f6f0;
+
+  border: 2px solid #16805c;
+
+  color: #16805c;
+
+}
+
+
+/* =================================
+   ERROR
+================================= */
+
+.custom-alert.error {
+
+  border-top: 4px solid #c0392b;
+
+}
+
+.custom-alert.error .alert-icon {
+
+  background: #fdecea;
+
+  border: 2px solid #c0392b;
+
+  color: #c0392b;
+
+}
+
+
+/* =================================
+   WARNING
+================================= */
+
+.custom-alert.warning {
+
+  border-top: 4px solid #d68910;
+
+}
+
+.custom-alert.warning .alert-icon {
+
+  background: #fff4df;
+
+  border: 2px solid #d68910;
+
+  color: #d68910;
+
+}
+
+
+/* =================================
+   ALERT TITLE
+================================= */
+
+.custom-alert h2 {
+
+  margin: 0 0 10px;
+
+  color: #16365c;
+
+  font-size: 22px;
+
+  font-weight: 600;
+
+}
+
+
+/* =================================
+   ALERT MESSAGE
+================================= */
+
+.custom-alert p {
+
+  margin: 0;
+
+  color: #6b7f99;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+}
+
+
+/* =================================
+   ALERT BUTTON
+================================= */
+
+.alert-btn {
+
+  width: 100%;
+
+  height: 45px;
+
+  margin-top: 22px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #075db3;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+}
+
+.alert-btn:hover {
+
+  background: #064b90;
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .custom-alert {
+
+    padding: 25px 20px;
+
+  }
+
+  .custom-alert h2 {
+
+    font-size: 20px;
+
+  }
+
+}
+
+/* =================================
+   LOGIN SECURITY ALERT
+================================= */
+
+.custom-alert-overlay {
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  background: rgba(12, 37, 61, 0.55);
+
+  backdrop-filter: blur(3px);
+
+  z-index: 9999;
+}
+
+
+/* =================================
+   SECURITY ALERT BOX
+================================= */
+
+.custom-alert {
+
+  width: 100%;
+
+  max-width: 410px;
+
+  padding: 32px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  border: 1px solid #dce5ef;
+
+  box-shadow: 0 15px 40px rgba(12, 61, 112, 0.22);
+
+  box-sizing: border-box;
+}
+
+
+/* =================================
+   SUCCESS
+================================= */
+
+.custom-alert.success {
+
+  border-top: 4px solid #1261b0;
+
+}
+
+
+/* =================================
+   ERROR
+================================= */
+
+.custom-alert.error {
+
+  border-top: 4px solid #b23a3a;
+
+}
+
+
+/* =================================
+   ACCOUNT
+================================= */
+
+.custom-alert.account {
+
+  border-top: 4px solid #1261b0;
+
+}
+
+
+/* =================================
+   ALERT ICON
+================================= */
+
+.alert-icon {
+
+  width: 62px;
+
+  height: 62px;
+
+  margin: 0 auto 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 27px;
+
+}
+
+
+/* Success Icon */
+
+.custom-alert.success .alert-icon {
+
+  background: #e8f2fb;
+
+  border: 2px solid #1261b0;
+
+}
+
+
+/* Error Icon */
+
+.custom-alert.error .alert-icon {
+
+  background: #fdeeee;
+
+  border: 2px solid #b23a3a;
+
+}
+
+
+/* Account Icon */
+
+.custom-alert.account .alert-icon {
+
+  background: #e8f2fb;
+
+  border: 2px solid #1261b0;
+
+}
+
+
+/* =================================
+   OFFICIAL LABEL
+================================= */
+
+.security-line {
+
+  margin-bottom: 9px;
+
+  color: #70839a;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+}
+
+
+/* =================================
+   ALERT TITLE
+================================= */
+
+.custom-alert h2 {
+
+  margin: 0 0 11px;
+
+  color: #16365c;
+
+  font-size: 22px;
+
+  font-weight: 600;
+}
+
+
+/* =================================
+   ALERT MESSAGE
+================================= */
+
+.custom-alert p {
+
+  margin: 0;
+
+  color: #6b7f99;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =================================
+   ALERT BUTTON
+================================= */
+
+.alert-btn {
+
+  width: 100%;
+
+  height: 46px;
+
+  margin-top: 23px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #075db3;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.alert-btn:hover {
+
+  background: #064b90;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .custom-alert {
+
+    padding: 27px 21px;
+
+  }
+
+  .custom-alert h2 {
+
+    font-size: 20px;
+
+  }
+
+}

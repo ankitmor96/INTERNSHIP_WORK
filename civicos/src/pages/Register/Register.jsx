@@ -10,11 +10,22 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  // Custom Alert State
+  const [alert, setAlert] = useState({
+    show: false,
+    type: "",
+    message: ""
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      alert("Password does not match");
+      setAlert({
+        show: true,
+        type: "error",
+        message: "Password does not match"
+      });
       return;
     }
 
@@ -24,8 +35,24 @@ const Register = () => {
     };
 
     localStorage.setItem("user", JSON.stringify(user));
-    alert("Registration Successful!");
-    navigate("/login");
+
+    setAlert({
+      show: true,
+      type: "success",
+      message: "Registration Successful!"
+    });
+  };
+
+  const closeAlert = () => {
+    setAlert({
+      show: false,
+      type: "",
+      message: ""
+    });
+
+    if (alert.type === "success") {
+      navigate("/login");
+    }
   };
 
   return (
@@ -100,6 +127,42 @@ const Register = () => {
         </p>
 
       </div>
+
+
+      {/* ================================
+          CUSTOM ALERT
+      ================================= */}
+
+      {alert.show && (
+        <div className="custom-alert-overlay">
+
+          <div className={`custom-alert ${alert.type}`}>
+
+            <div className="alert-icon">
+              {alert.type === "success" ? "✓" : "!"}
+            </div>
+
+            <h2>
+              {alert.type === "success"
+                ? "Registration Successful"
+                : "Registration Error"}
+            </h2>
+
+            <p>
+              {alert.message}
+            </p>
+
+            <button
+              className="alert-btn"
+              onClick={closeAlert}
+            >
+              OK
+            </button>
+
+          </div>
+
+        </div>
+      )}
 
     </div>
   );

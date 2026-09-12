@@ -17,8 +17,6 @@ body,
 
     height: auto;
 
-    /* IMPORTANT:
-       Dashboard page can scroll vertically */
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -75,6 +73,7 @@ body {
 .dashboard-brand {
     display: flex;
     align-items: center;
+
     gap: 14px;
 }
 
@@ -157,12 +156,6 @@ body {
 
     padding: 35px 40px 50px;
 
-    /*
-       IMPORTANT:
-       Do not use flex: 1 here.
-       Content decides page height,
-       so complete dashboard can scroll.
-    */
     flex: none;
 
     overflow: visible;
@@ -510,10 +503,6 @@ body {
 .table-container {
     width: 100%;
 
-    /*
-       Horizontal scroll only when table
-       becomes wider than the screen.
-    */
     overflow-x: auto;
 
     overflow-y: visible;
@@ -1105,10 +1094,118 @@ tbody tr:hover {
 
 
 /* =========================================
+   DELETE CONFIRMATION ALERT
+========================================= */
+
+.delete-confirm-alert {
+    max-width: 450px;
+
+    border-top-color: #d93025;
+}
+
+.delete-confirm-icon {
+    background: #fceaea;
+
+    color: #d93025;
+
+    border: 1px solid #edc0c0;
+
+    font-size: 27px;
+}
+
+.delete-confirm-alert h3 {
+    color: #123f6b;
+}
+
+.delete-confirm-alert p {
+    margin-bottom: 25px;
+
+    color: #63798d;
+
+    line-height: 1.7;
+}
+
+.delete-confirm-alert p strong {
+    color: #173f63;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   DELETE CONFIRM BUTTONS
+========================================= */
+
+.delete-confirm-buttons {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    width: 100%;
+}
+
+.delete-confirm-buttons button {
+    height: 45px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+/* CANCEL */
+
+.delete-cancel-btn {
+    border: 1px solid #c7d9e8;
+
+    background: #ffffff;
+
+    color: #526b80;
+}
+
+.delete-cancel-btn:hover {
+    background: #f1f5f8;
+
+    border-color: #aebfce;
+}
+
+
+/* DELETE */
+
+.delete-confirm-btn {
+    border: none;
+
+    background: #d93025;
+
+    color: #ffffff;
+}
+
+.delete-confirm-btn:hover {
+    background: #b9231a;
+
+    transform: translateY(-1px);
+}
+
+.delete-confirm-btn:active,
+.delete-cancel-btn:active {
+    transform: translateY(1px);
+}
+
+
+/* =========================================
    ANIMATIONS
 ========================================= */
 
 @keyframes dashboardModalShow {
+
     from {
         opacity: 0;
 
@@ -1120,9 +1217,11 @@ tbody tr:hover {
 
         transform: translateY(0) scale(1);
     }
+
 }
 
 @keyframes dashboardAlertShow {
+
     from {
         opacity: 0;
 
@@ -1134,6 +1233,7 @@ tbody tr:hover {
 
         transform: translateY(0) scale(1);
     }
+
 }
 
 
@@ -1163,11 +1263,6 @@ tbody tr:hover {
 ========================================= */
 
 @media (max-width: 700px) {
-
-    /*
-       IMPORTANT:
-       Full dashboard page vertical scrolling
-    */
 
     html,
     body,
@@ -1320,6 +1415,8 @@ tbody tr:hover {
 
     table {
         min-width: 850px;
+
+        table-layout: auto;
     }
 
 
@@ -1451,9 +1548,9 @@ tbody tr:hover {
 
 }
 
+
 /* =========================================
    ONE SCREEN DASHBOARD
-   All authority records visible
 ========================================= */
 
 html,
@@ -1802,6 +1899,7 @@ td {
     td {
         padding: 10px 12px;
     }
+
 }
 
 
@@ -1875,6 +1973,7 @@ td {
         width: 28px;
         height: 28px;
     }
+
 }
 
 
@@ -1883,12 +1982,6 @@ td {
 ========================================= */
 
 @media (max-width: 700px) {
-
-    /*
-       Mobile needs scrolling because
-       one-screen desktop layout cannot
-       fit comfortably on a phone.
-    */
 
     html,
     body,
@@ -1990,6 +2083,7 @@ td {
 
         table-layout: auto;
     }
+
 }
 
 
@@ -2010,4 +2104,22 @@ td {
     .stat-card {
         min-height: 82px;
     }
+
+
+    /* DELETE ALERT MOBILE */
+
+    .delete-confirm-alert {
+        padding: 27px 20px;
+    }
+
+    .delete-confirm-buttons {
+        grid-template-columns: 1fr;
+
+        gap: 9px;
+    }
+
+    .delete-confirm-buttons button {
+        width: 100%;
+    }
+
 }

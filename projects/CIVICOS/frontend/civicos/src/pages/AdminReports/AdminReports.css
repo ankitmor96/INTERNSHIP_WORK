@@ -1,0 +1,1382 @@
+/* =========================================
+   CIVICOS ADMIN REPORTS
+   GOVERNMENT DIGITAL SERVICES PORTAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   HTML / BODY
+========================================= */
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+body {
+  background: #f4f6f8;
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.reports-page {
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #f4f6f8;
+
+  color: #1f2937;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   GOVERNMENT TOP STRIPE
+========================================= */
+
+.reports-page::before {
+  content: "";
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: linear-gradient(
+    to right,
+    #e67e22 0%,
+    #e67e22 33%,
+    #ffffff 33%,
+    #ffffff 66%,
+    #2e7d32 66%,
+    #2e7d32 100%
+  );
+
+  z-index: 999;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.reports-header {
+  min-height: 76px;
+
+  padding: 8px 44px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #d9dee5;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  flex-shrink: 0;
+}
+
+
+/* LEFT */
+
+.header-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+}
+
+
+/* EMBLEM */
+
+.emblem-box {
+  width: 47px;
+  height: 55px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+.emblem-box img {
+  width: 42px;
+  height: 52px;
+
+  object-fit: contain;
+}
+
+
+/* BRAND */
+
+.brand-content h1 {
+  margin: 0;
+
+  color: #172d44;
+
+  font-size: 25px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+
+.brand-content p {
+  margin: 2px 0 0;
+
+  color: #687789;
+
+  font-size: 11px;
+}
+
+
+/* RIGHT */
+
+.header-right {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 3px;
+}
+
+
+.header-right span {
+  color: #697586;
+
+  font-size: 11px;
+}
+
+
+.header-right strong {
+  color: #111827;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.reports-container {
+  width: calc(100% - 64px);
+
+  max-width: 1500px;
+
+  margin: 18px auto 12px;
+
+  flex: 1;
+
+  min-height: 0;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================
+   PAGE TITLE
+========================================= */
+
+.page-title {
+  min-height: 58px;
+
+  margin-bottom: 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  flex-shrink: 0;
+}
+
+
+.page-title h2 {
+  margin: 0;
+
+  color: #172d44;
+
+  font-size: 26px;
+
+  font-weight: 700;
+}
+
+
+.page-title p {
+  margin: 4px 0 0;
+
+  color: #687789;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   REPORT COUNT
+========================================= */
+
+.report-count {
+  min-width: 135px;
+
+  height: 62px;
+
+  padding: 8px 15px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce2e8;
+
+  border-radius: 8px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
+}
+
+
+.report-count span {
+  color: #718096;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+
+.report-count strong {
+  margin-top: 2px;
+
+  color: #172d44;
+
+  font-size: 22px;
+}
+
+
+/* =========================================
+   SEARCH / FILTER
+========================================= */
+
+.report-controls {
+  min-height: 59px;
+
+  padding: 8px;
+
+  margin-bottom: 15px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce2e8;
+
+  border-radius: 8px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+
+
+/* SEARCH */
+
+.search-box {
+  height: 41px;
+
+  flex: 1;
+
+  border: 1px solid #d2d9e1;
+
+  border-radius: 6px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 12px;
+}
+
+
+.search-icon {
+  margin-right: 8px;
+
+  color: #60758a;
+
+  font-size: 20px;
+}
+
+
+.search-box input {
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #26364a;
+
+  font-size: 12px;
+}
+
+
+.search-box input::placeholder {
+  color: #9aa5b1;
+}
+
+
+/* SELECT */
+
+.report-controls select {
+  width: 170px;
+
+  height: 41px;
+
+  padding: 0 11px;
+
+  border: 1px solid #d2d9e1;
+
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  color: #374151;
+
+  font-size: 12px;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   REPORT CARD
+========================================= */
+
+.reports-card {
+  width: 100%;
+
+  flex: 1;
+
+  min-height: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background: #ffffff;
+
+  border: 1px solid #dce2e8;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  box-shadow: 0 2px 9px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================
+   TABLE HEADER
+========================================= */
+
+.table-header {
+  min-height: 63px;
+
+  padding: 11px 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-bottom: 1px solid #e1e5ea;
+
+  flex-shrink: 0;
+}
+
+
+.table-header h3 {
+  margin: 0;
+
+  color: #172d44;
+
+  font-size: 16px;
+}
+
+
+.table-header p {
+  margin: 3px 0 0;
+
+  color: #718096;
+
+  font-size: 11px;
+}
+
+
+.records-showing {
+  color: #788493;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   TABLE WRAPPER
+========================================= */
+
+.table-wrapper {
+  width: 100%;
+
+  flex: 1;
+
+  min-height: 0;
+
+  overflow-x: auto;
+
+  overflow-y: auto;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+table {
+  width: 100%;
+
+  min-width: 1050px;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+}
+
+
+/* =========================================
+   TABLE HEAD
+========================================= */
+
+thead {
+  background: #f7f8fa;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 2;
+}
+
+
+th {
+  height: 43px;
+
+  padding: 0 20px;
+
+  text-align: left;
+
+  border-bottom: 1px solid #dce2e8;
+
+  color: #586779;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   COLUMN WIDTH
+========================================= */
+
+th:nth-child(1) {
+  width: 13%;
+}
+
+
+th:nth-child(2) {
+  width: 17%;
+}
+
+
+th:nth-child(3) {
+  width: 23%;
+}
+
+
+th:nth-child(4) {
+  width: 14%;
+}
+
+
+th:nth-child(5) {
+  width: 14%;
+}
+
+
+th:nth-child(6) {
+  width: 19%;
+}
+
+
+/* =========================================
+   TABLE DATA
+========================================= */
+
+td {
+  height: 56px;
+
+  padding: 0 20px;
+
+  border-bottom: 1px solid #edf0f3;
+
+  color: #344054;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+
+tbody tr {
+  transition: background 0.15s ease;
+}
+
+
+tbody tr:hover {
+  background: #fafbfc;
+}
+
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================================
+   REPORT ID
+========================================= */
+
+.report-id {
+  color: #172d44;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================
+   REPORT TYPE
+========================================= */
+
+.report-type {
+  color: #374151;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   SUBMITTED USER
+========================================= */
+
+.submitted-user {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+
+.user-icon {
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #eef1f4;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #40566d;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.submitted-user span:last-child {
+  color: #374151;
+
+  font-weight: 500;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+}
+
+
+/* APPROVED */
+
+.status.approved {
+  color: #2f6b3c;
+
+  background: #edf7ef;
+}
+
+
+.status.approved .status-dot {
+  background: #3d8a4d;
+}
+
+
+/* PENDING */
+
+.status.pending {
+  color: #946b20;
+
+  background: #fff7e8;
+}
+
+
+.status.pending .status-dot {
+  background: #c28b24;
+}
+
+
+/* REJECTED */
+
+.status.rejected {
+  color: #a04444;
+
+  background: #fceeee;
+}
+
+
+.status.rejected .status-dot {
+  background: #c45a5a;
+}
+
+
+/* =========================================
+   ACTION
+========================================= */
+
+.action-cell {
+  padding-right: 18px;
+}
+
+
+.action-heading {
+  text-align: left;
+}
+
+
+.action-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+.action-buttons button {
+  min-width: 60px;
+
+  height: 30px;
+
+  padding: 0 10px;
+
+  border-radius: 5px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.18s ease;
+}
+
+
+/* EDIT */
+
+.edit-btn {
+  border: 1px solid #cbd5df;
+
+  background: #f4f6f8;
+
+  color: #34495e;
+}
+
+
+.edit-btn:hover {
+  background: #e8edf2;
+
+  border-color: #b8c3ce;
+}
+
+
+/* DELETE */
+
+.delete-btn {
+  border: 1px solid #efd0d0;
+
+  background: #fff5f5;
+
+  color: #a04444;
+}
+
+
+.delete-btn:hover {
+  background: #fbe8e8;
+
+  border-color: #e3b8b8;
+}
+
+
+/* =========================================
+   NO DATA
+========================================= */
+
+.no-data {
+  height: 130px;
+
+  text-align: center;
+
+  color: #87909c;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.reports-footer {
+  height: 36px;
+
+  min-height: 36px;
+
+  padding: 0 32px;
+
+  background: #ffffff;
+
+  border-top: 1px solid #d6dce2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color: #667382;
+
+  font-size: 10px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   MODAL OVERLAY
+========================================= */
+
+.modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  background: rgba(17, 24, 39, 0.48);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+}
+
+
+/* =========================================
+   MODAL BOX
+========================================= */
+
+.modal-box {
+  width: 100%;
+
+  max-width: 470px;
+
+  background: #ffffff;
+
+  border-radius: 9px;
+
+  border: 1px solid #dce2e8;
+
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.16);
+
+  overflow: hidden;
+
+  animation: modalOpen 0.18s ease;
+}
+
+
+@keyframes modalOpen {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================
+   MODAL HEADER
+========================================= */
+
+.modal-header {
+  padding: 18px 21px;
+
+  border-bottom: 1px solid #e3e7eb;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+}
+
+
+.modal-header h3 {
+  margin: 0;
+
+  color: #172d44;
+
+  font-size: 17px;
+}
+
+
+.modal-header p {
+  margin: 4px 0 0;
+
+  color: #788493;
+
+  font-size: 11px;
+}
+
+
+.modal-close {
+  width: 29px;
+  height: 29px;
+
+  border: none;
+
+  background: #f1f3f5;
+
+  border-radius: 5px;
+
+  color: #596474;
+
+  font-size: 19px;
+
+  cursor: pointer;
+}
+
+
+.modal-close:hover {
+  background: #e7eaed;
+}
+
+
+/* =========================================
+   MODAL BODY
+========================================= */
+
+.modal-body {
+  padding: 19px 21px;
+}
+
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #475467;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+.form-group input,
+.form-group select {
+  width: 100%;
+
+  height: 39px;
+
+  padding: 0 10px;
+
+  border: 1px solid #d2d9e1;
+
+  border-radius: 5px;
+
+  outline: none;
+
+  color: #344054;
+
+  background: #ffffff;
+
+  font-size: 12px;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #71869a;
+}
+
+
+.form-group input:disabled {
+  background: #f3f5f7;
+
+  color: #737e8c;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   MODAL FOOTER
+========================================= */
+
+.modal-footer {
+  padding: 13px 21px;
+
+  border-top: 1px solid #e3e7eb;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 9px;
+}
+
+
+.cancel-btn,
+.save-btn,
+.confirm-delete-btn,
+.success-btn {
+  height: 35px;
+
+  padding: 0 14px;
+
+  border-radius: 5px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+/* CANCEL */
+
+.cancel-btn {
+  border: 1px solid #d2d8df;
+
+  background: #ffffff;
+
+  color: #596474;
+}
+
+
+.cancel-btn:hover {
+  background: #f6f7f8;
+}
+
+
+/* SAVE */
+
+.save-btn {
+  border: 1px solid #263f58;
+
+  background: #263f58;
+
+  color: #ffffff;
+}
+
+
+.save-btn:hover {
+  background: #1d3349;
+}
+
+
+/* DELETE */
+
+.confirm-delete-btn {
+  border: 1px solid #a04444;
+
+  background: #a04444;
+
+  color: #ffffff;
+}
+
+
+.confirm-delete-btn:hover {
+  background: #8e3838;
+}
+
+
+/* =========================================
+   DELETE CONFIRMATION
+========================================= */
+
+.delete-icon {
+  width: 47px;
+  height: 47px;
+
+  margin: 24px auto 11px;
+
+  border-radius: 50%;
+
+  background: #fff0f0;
+
+  color: #a04444;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 22px;
+
+  font-weight: 700;
+}
+
+
+.confirmation-content {
+  text-align: center;
+
+  padding: 0 25px 9px;
+}
+
+
+.confirmation-content h3 {
+  margin: 0;
+
+  color: #172d44;
+
+  font-size: 17px;
+}
+
+
+.confirmation-content p {
+  margin: 8px 0 4px;
+
+  color: #596474;
+
+  font-size: 12px;
+}
+
+
+.confirmation-content p strong {
+  color: #344054;
+}
+
+
+.confirmation-content span {
+  color: #8a939e;
+
+  font-size: 10px;
+}
+
+
+.confirmation-content + .modal-footer {
+  justify-content: center;
+}
+
+
+/* =========================================
+   SUCCESS
+========================================= */
+
+.success-modal {
+  padding: 27px 25px 24px;
+
+  text-align: center;
+}
+
+
+.success-icon,
+.deleted-icon {
+  width: 50px;
+  height: 50px;
+
+  margin: 0 auto 12px;
+
+  border-radius: 50%;
+
+  background: #edf7ef;
+
+  color: #347443;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 23px;
+
+  font-weight: 700;
+}
+
+
+.success-modal h3 {
+  margin: 0;
+
+  color: #172d44;
+
+  font-size: 17px;
+}
+
+
+.success-modal p {
+  margin: 7px 0 18px;
+
+  color: #718096;
+
+  font-size: 12px;
+}
+
+
+.success-btn {
+  min-width: 95px;
+
+  border: 1px solid #263f58;
+
+  background: #263f58;
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .reports-header {
+    padding: 8px 18px;
+  }
+
+
+  .header-right {
+    display: none;
+  }
+
+
+  .reports-container {
+    width: calc(100% - 30px);
+
+    margin-top: 15px;
+  }
+
+
+  .page-title {
+    min-height: 55px;
+
+    gap: 12px;
+  }
+
+
+  .page-title h2 {
+    font-size: 22px;
+  }
+
+
+  .page-title p {
+    font-size: 11px;
+  }
+
+
+  .report-count {
+    min-width: 105px;
+
+    height: 55px;
+  }
+
+
+  .report-controls {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    min-height: auto;
+  }
+
+
+  .report-controls select {
+    width: 100%;
+  }
+
+
+  .table-wrapper {
+    overflow-x: auto;
+
+    overflow-y: auto;
+  }
+
+
+  .reports-footer {
+    padding: 0 15px;
+
+    font-size: 9px;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .brand-content h1 {
+    font-size: 21px;
+  }
+
+
+  .brand-content p {
+    font-size: 9px;
+  }
+
+
+  .page-title {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .report-count {
+    align-self: flex-start;
+  }
+
+
+  .modal-overlay {
+    padding: 15px;
+  }
+
+}

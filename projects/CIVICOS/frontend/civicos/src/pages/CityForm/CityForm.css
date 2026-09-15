@@ -1,0 +1,894 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.city-form-page {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #f4f7fa;
+  color: #1f2937;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.city-header {
+  min-height: 82px;
+
+  padding: 14px 5%;
+
+  background: #ffffff;
+
+  border-bottom: 4px solid #1d4ed8;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.city-header-left {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+/* Government Emblem */
+
+.city-emblem {
+  width: 54px;
+  height: 54px;
+
+  padding: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border: 1px solid #d7dee8;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  flex-shrink: 0;
+}
+
+.city-emblem img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+
+/* Government Title */
+
+.city-header-left h1 {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #172554;
+}
+
+.city-header-left p {
+  margin: 3px 0 0;
+
+  font-size: 12px;
+
+  color: #64748b;
+}
+
+
+/* CIVIC Brand */
+
+.city-brand {
+  display: flex;
+  flex-direction: column;
+
+  text-align: right;
+}
+
+.city-brand strong {
+  color: #1d4ed8;
+
+  font-size: 24px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.city-brand span {
+  margin-top: 1px;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =====================================================
+   CENTER ALERT
+===================================================== */
+
+.city-alert {
+  position: fixed;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 9999;
+
+  width: min(430px, calc(100% - 30px));
+
+  min-height: 90px;
+
+  padding: 18px 20px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  background: #ffffff;
+
+  border-radius: 11px;
+
+  box-shadow:
+    0 18px 50px rgba(15, 23, 42, 0.22);
+
+  animation: cityAlertCenter 0.3s ease;
+}
+
+
+/* Success Alert */
+
+.city-alert.success {
+  border-left: 5px solid #16a34a;
+}
+
+
+/* Error Alert */
+
+.city-alert.error {
+  border-left: 5px solid #dc2626;
+}
+
+
+/* Alert Icon */
+
+.city-alert-icon {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+}
+
+.city-alert.success .city-alert-icon {
+  color: #15803d;
+
+  background: #dcfce7;
+}
+
+.city-alert.error .city-alert-icon {
+  color: #b91c1c;
+
+  background: #fee2e2;
+}
+
+
+/* Alert Content */
+
+.city-alert-content {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.city-alert-content strong {
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: #1e293b;
+}
+
+.city-alert-content span {
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  color: #64748b;
+}
+
+
+/* Alert Close */
+
+.city-alert-close {
+  width: 30px;
+  height: 30px;
+
+  padding: 0;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background: transparent;
+
+  color: #64748b;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: none;
+}
+
+.city-alert-close:hover {
+  background: #f1f5f9;
+
+  color: #334155;
+}
+
+
+/* Alert Animation */
+
+@keyframes cityAlertCenter {
+  from {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -45%);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%);
+  }
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.city-main {
+  flex: 1;
+
+  width: 100%;
+
+  padding: 35px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =====================================================
+   FORM CARD
+===================================================== */
+
+.city-card {
+  width: 100%;
+
+  max-width: 850px;
+
+  padding: 36px;
+
+  background: #ffffff;
+
+  border: 1px solid #dbe3ec;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 10px 35px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =====================================================
+   PAGE TITLE
+===================================================== */
+
+.city-title {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding-bottom: 24px;
+
+  margin-bottom: 25px;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+
+/* Title Icon */
+
+.city-title-icon {
+  width: 54px;
+  height: 54px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eff6ff;
+
+  color: #1d4ed8;
+
+  border-radius: 10px;
+}
+
+.city-title h2 {
+  margin: 0;
+
+  font-size: 25px;
+  font-weight: 700;
+
+  color: #172554;
+}
+
+.city-title p {
+  margin: 5px 0 0;
+
+  font-size: 13px;
+
+  color: #64748b;
+
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   FORM GRID
+===================================================== */
+
+.city-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+/* =====================================================
+   FORM FIELD
+===================================================== */
+
+.city-field {
+  width: 100%;
+}
+
+.city-field label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #334155;
+}
+
+.city-field label span {
+  color: #dc2626;
+
+  margin-left: 2px;
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.city-input {
+  width: 100%;
+  height: 48px;
+
+  padding: 0 13px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  background: #ffffff;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 7px;
+
+  transition: 0.2s ease;
+}
+
+.city-input:focus-within {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* Input Icon */
+
+.city-input svg {
+  flex-shrink: 0;
+
+  color: #64748b;
+}
+
+
+/* Input Field */
+
+.city-input input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #1e293b;
+
+  font-size: 14px;
+
+  font-family: inherit;
+}
+
+.city-input input::placeholder {
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   STATUS SECTION
+===================================================== */
+
+.status-section {
+  margin-top: 25px;
+
+  padding-top: 22px;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+
+/* Status Label */
+
+.status-label {
+  display: block;
+
+  margin-bottom: 13px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #334155;
+}
+
+
+/* Radio Options */
+
+.status-options {
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+/* Radio Label */
+
+.radio-option {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #334155;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  user-select: none;
+}
+
+
+/* Hide Native Radio */
+
+.radio-option input {
+  position: absolute;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+/* Custom Radio */
+
+.radio-custom {
+  width: 18px;
+  height: 18px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #94a3b8;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+}
+
+
+/* Selected Radio */
+
+.radio-option input:checked + .radio-custom {
+  border-color: #1d4ed8;
+}
+
+
+/* Radio Inner Circle */
+
+.radio-option
+input:checked
++ .radio-custom::after {
+  content: "";
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #1d4ed8;
+}
+
+
+/* =====================================================
+   ACTION BUTTON
+===================================================== */
+
+.city-actions {
+  margin-top: 28px;
+
+  padding-top: 22px;
+
+  border-top: 1px solid #e2e8f0;
+
+  display: flex;
+
+  justify-content: flex-end;
+}
+
+.city-submit {
+  min-width: 130px;
+
+  height: 45px;
+
+  padding: 0 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #1d4ed8;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.city-submit:hover {
+  background: #1e40af;
+}
+
+.city-submit:active {
+  transform: scale(0.99);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.city-footer {
+  min-height: 58px;
+
+  padding: 12px 5%;
+
+  background: #172554;
+
+  color: #cbd5e1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  font-size: 11px;
+}
+
+.city-footer div {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.city-footer div span {
+  cursor: pointer;
+}
+
+.city-footer div span:hover {
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .city-main {
+    padding: 25px 15px;
+  }
+
+  .city-card {
+    padding: 28px 22px;
+  }
+
+  .city-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .city-footer {
+    flex-direction: column;
+
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 8px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+
+  /* Header */
+
+  .city-header {
+    min-height: 72px;
+
+    padding: 11px 15px;
+  }
+
+  .city-emblem {
+    width: 43px;
+    height: 43px;
+
+    padding: 4px;
+  }
+
+  .city-header-left {
+    gap: 10px;
+  }
+
+  .city-header-left h1 {
+    font-size: 14px;
+  }
+
+  .city-header-left p {
+    font-size: 10px;
+  }
+
+  .city-brand strong {
+    font-size: 19px;
+  }
+
+  .city-brand span {
+    display: none;
+  }
+
+
+  /* Main */
+
+  .city-main {
+    padding: 20px 12px;
+  }
+
+
+  /* Card */
+
+  .city-card {
+    padding: 24px 18px;
+
+    border-radius: 10px;
+  }
+
+
+  /* Title */
+
+  .city-title {
+    gap: 12px;
+
+    padding-bottom: 20px;
+
+    margin-bottom: 22px;
+  }
+
+  .city-title-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .city-title h2 {
+    font-size: 21px;
+  }
+
+  .city-title p {
+    font-size: 12px;
+  }
+
+
+  /* Status */
+
+  .status-options {
+    gap: 22px;
+  }
+
+
+  /* Button */
+
+  .city-actions {
+    justify-content: stretch;
+  }
+
+  .city-submit {
+    width: 100%;
+  }
+
+
+  /* Alert */
+
+  .city-alert {
+    width: calc(100% - 30px);
+
+    min-height: 85px;
+
+    padding: 16px;
+  }
+
+  .city-alert-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .city-alert-content strong {
+    font-size: 13px;
+  }
+
+  .city-alert-content span {
+    font-size: 11px;
+  }
+
+
+  /* Footer */
+
+  .city-footer div {
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 10px;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .city-header-left p {
+    display: none;
+  }
+
+  .city-brand {
+    display: none;
+  }
+
+  .city-card {
+    padding: 22px 15px;
+  }
+
+  .city-title h2 {
+    font-size: 19px;
+  }
+
+  .status-options {
+    gap: 18px;
+  }
+
+  .city-alert {
+    width: calc(100% - 24px);
+  }
+}
+

@@ -1,0 +1,483 @@
+/* =========================================
+   CIVICOS SECOND REGISTER PAGE
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.second-register-page {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #f4f7fb;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.second-register-header {
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 5%;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #dce3eb;
+}
+
+
+.second-register-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.second-register-brand img {
+    width: 50px;
+    height: 50px;
+
+    object-fit: contain;
+}
+
+
+.second-register-brand h1 {
+    margin: 0;
+
+    color: #17365d;
+
+    font-size: 25px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.second-register-brand p {
+    margin: 4px 0 0;
+
+    color: #6b7280;
+
+    font-size: 12px;
+}
+
+
+.second-register-title {
+    color: #17365d;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.second-register-main {
+    flex: 1;
+
+    width: 100%;
+
+    padding: 45px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.second-register-card {
+    width: 100%;
+    max-width: 900px;
+
+    padding: 32px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e7ef;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 8px 30px rgba(25, 55, 90, 0.08);
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.second-register-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #e5eaf0;
+}
+
+
+.second-register-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #eef4fb;
+
+    font-size: 22px;
+}
+
+
+.second-register-heading h2 {
+    margin: 0;
+
+    color: #17365d;
+
+    font-size: 22px;
+}
+
+
+.second-register-heading p {
+    margin: 5px 0 0;
+
+    color: #718096;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   CUSTOM ALERT
+========================================= */
+
+.second-register-alert {
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+    padding: 10px 14px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.second-register-alert.success {
+    color: #19703c;
+
+    background: #eaf8f0;
+
+    border: 1px solid #b8e4ca;
+}
+
+
+.second-register-alert.warning {
+    color: #8a6200;
+
+    background: #fff8e6;
+
+    border: 1px solid #f0d58a;
+}
+
+
+.second-register-alert.error {
+    color: #a32929;
+
+    background: #fdeeee;
+
+    border: 1px solid #efb7b7;
+}
+
+
+.second-alert-icon {
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: currentColor;
+
+    color: #ffffff;
+}
+
+
+.second-register-alert button {
+    margin-left: auto;
+
+    border: none;
+
+    background: transparent;
+
+    color: inherit;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   FORM GRID
+========================================= */
+
+.second-register-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 21px 20px;
+}
+
+
+/* =========================================
+   FIELD
+========================================= */
+
+.second-register-field {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.second-register-field label {
+    margin-bottom: 8px;
+
+    color: #334155;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.second-register-field label span {
+    color: #c62828;
+}
+
+
+.second-register-field input,
+.second-register-field select {
+    width: 100%;
+    height: 45px;
+
+    padding: 0 13px;
+
+    border: 1px solid #cfd8e3;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #1e293b;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+
+.second-register-field input::placeholder {
+    color: #9aa6b2;
+}
+
+
+.second-register-field input:focus,
+.second-register-field select:focus {
+    border-color: #315f8c;
+
+    box-shadow:
+        0 0 0 3px rgba(49, 95, 140, 0.1);
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.second-register-actions {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: 28px;
+    padding-top: 22px;
+
+    border-top: 1px solid #e5eaf0;
+}
+
+
+.second-register-submit {
+    min-width: 180px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #17365d;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.second-register-submit:hover {
+    background: #0f2948;
+}
+
+
+.second-register-submit:active {
+    transform: translateY(1px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.second-register-footer {
+    padding: 17px 20px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border-top: 1px solid #dce3eb;
+
+    color: #718096;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 700px) {
+
+    .second-register-header {
+        padding: 13px 20px;
+    }
+
+
+    .second-register-title {
+        display: none;
+    }
+
+
+    .second-register-main {
+        padding: 25px 15px;
+    }
+
+
+    .second-register-card {
+        padding: 24px 18px;
+    }
+
+
+    .second-register-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .second-register-actions {
+        justify-content: stretch;
+    }
+
+
+    .second-register-submit {
+        width: 100%;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 450px) {
+
+    .second-register-brand img {
+        width: 42px;
+        height: 42px;
+    }
+
+
+    .second-register-brand h1 {
+        font-size: 21px;
+    }
+
+
+    .second-register-brand p {
+        font-size: 10px;
+    }
+
+
+    .second-register-card {
+        padding: 20px 15px;
+
+        border-radius: 9px;
+    }
+
+
+    .second-register-heading h2 {
+        font-size: 19px;
+    }
+
+
+    .second-register-heading p {
+        font-size: 12px;
+    }
+}
